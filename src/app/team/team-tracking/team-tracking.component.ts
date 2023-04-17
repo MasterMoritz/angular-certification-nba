@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TeamDataService } from '../service/team-data.service';
 import { Observable } from 'rxjs';
 import { Team } from '../dto/team';
+import { TeamTrackingService } from '../service/team-tracking.service';
 
 @Component({
   selector: 'app-team-tracking',
@@ -11,13 +12,19 @@ import { Team } from '../dto/team';
 export class TeamTrackingComponent implements OnInit {
   teams$!: Observable<Team[]>;
   teams: Team[] = [];
+  selectedTeam!: Team;
 
-  constructor(private teamDataService: TeamDataService) {}
+  constructor(private teamDataService: TeamDataService, private teamTrackingService: TeamTrackingService) {}
 
 
   ngOnInit(): void {
     this.teams$ = this.teamDataService.getTeams();
   }
 
+  handleTrackButtonClick(team: Team) {
+    if (team) {
+      this.teamTrackingService.trackTeam(team);
+    }
+  }
 
 }

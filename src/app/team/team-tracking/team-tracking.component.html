@@ -1,5 +1,5 @@
 <p>team-tracking works!</p>
-<select id="teamSelect">
-    <option *ngFor="let team of teams$ | async" [value]="team.id">{{team.full_name}}</option>
+<select id="teamSelect" [(ngModel)]="selectedTeam">
+    <option *ngFor="let team of teams$ | async" [ngValue]="team">{{team.full_name}}</option>
 </select>
-<button id="trackBtn">Track team</button>
+<button id="trackBtn" (click)="handleTrackButtonClick(selectedTeam)">Track team</button>
