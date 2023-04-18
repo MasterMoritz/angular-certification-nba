@@ -11,7 +11,6 @@ import { TeamTrackingService } from '../service/team-tracking.service';
 })
 export class TeamTrackingComponent implements OnInit {
   teams$!: Observable<Team[]>;
-  teams: Team[] = [];
   selectedTeam!: Team;
 
   constructor(private teamDataService: TeamDataService, private teamTrackingService: TeamTrackingService) {}

@@ -5,7 +5,8 @@ import { TeamTrackingComponent } from './team-tracking/team-tracking.component';
 import { TeamSummaryComponent } from './team-summary/team-summary.component';
 import {FormsModule} from '@angular/forms';
 import { AverageScorePipe } from './pipe/average-score.pipe';
-
+import { TeamResultsComponent } from './team-results/team-results.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -13,11 +14,13 @@ import { AverageScorePipe } from './pipe/average-score.pipe';
     TeamDashboardComponent,
     TeamTrackingComponent,
     TeamSummaryComponent,
-    AverageScorePipe
+    AverageScorePipe,
+    TeamResultsComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
   ]
 })
 export class TeamModule { }

@@ -12,7 +12,7 @@
             <p>Avg pts conceded: <b>{{games | averageScore:team.id:true | number: '1.0-0'}}</b></p>
         </ng-container>
         
-        <button id="results{{team.abbreviation}}">See Game Results > ></button>
+        <button id="results{{team.abbreviation}}" [routerLink]="['/results', team.id]">See Game Results > ></button>
     </div>
 </div>
 

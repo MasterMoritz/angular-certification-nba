@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Team } from '../dto/team';
 import { GameDataService } from '../service/game-data.service';
-import { formatDate } from '@angular/common';
 import { Observable, of } from 'rxjs';
 import { Game } from '../dto/game';
 import { TeamTrackingService } from '../service/team-tracking.service';
@@ -32,5 +31,8 @@ export class TeamSummaryComponent implements OnInit {
 
   handleCloseButtonClick(team: Team) {
     this.teamTrackingService.removeTeam(team);
+  }
+  handleResultButtonClick(team: Team) {
+
   }
 }

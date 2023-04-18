@@ -1,4 +1,3 @@
-<p>team-tracking works!</p>
 <select id="teamSelect" [(ngModel)]="selectedTeam">
     <option *ngFor="let team of teams$ | async" [ngValue]="team">{{team.full_name}}</option>
 </select>
