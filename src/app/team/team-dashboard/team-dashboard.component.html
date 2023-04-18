@@ -1,2 +1,5 @@
 <app-team-tracking></app-team-tracking>
-<app-team-summary *ngFor="let trackedTeam of teams" [team]="trackedTeam"></app-team-summary>
+<div class="flex flex-wrap gap-4 m-4">
+    <app-team-summary *ngFor="let trackedTeam of teams" [team]="trackedTeam"></app-team-summary>
+</div>
+
