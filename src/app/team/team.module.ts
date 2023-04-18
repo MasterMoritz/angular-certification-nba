@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import { AverageScorePipe } from './pipe/average-score.pipe';
 import { TeamResultsComponent } from './team-results/team-results.component';
 import {RouterModule} from '@angular/router';
+import { GameScoreComponent } from './game-score/game-score.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {RouterModule} from '@angular/router';
     TeamSummaryComponent,
     AverageScorePipe,
     TeamResultsComponent,
+    GameScoreComponent,
   ],
   imports: [
     CommonModule,

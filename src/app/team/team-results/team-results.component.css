@@ -2,17 +2,3 @@
     border-style: solid;
     border-width: thin;
 }
-.winner-team {
-    background-color: green;
-    color: whitesmoke;
-    border-radius: 0.25em;
-    margin-right: 1px;
-    margin-left: 1px;
-}
-.loser-team {
-    background-color: rgba(255, 0, 0, 0.752);
-    color: whitesmoke;
-    border-radius: 0.25em;
-    margin-right: 1px;
-    margin-left: 1px;
-}

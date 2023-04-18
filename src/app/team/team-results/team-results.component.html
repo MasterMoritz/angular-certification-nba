@@ -5,13 +5,7 @@
         <hr />
         <p>Scores of past 12 days:</p>
         <p *ngFor="let game of games$ | async">
-            <span
-                [ngClass]="game.home_team.id === team.id ? (game.home_team_score > game.visitor_team_score ? 'winner-team' : 'loser-team') : ''"><b>{{game.home_team.abbreviation}}</b></span>
-            &nbsp;
-            <span>{{game.home_team_score}} - {{game.visitor_team_score}}</span>
-            &nbsp;
-            <span
-                [ngClass]="game.visitor_team.id === team.id ? (game.home_team_score < game.visitor_team_score ? 'winner-team' : 'loser-team'): ''"><b>{{game.visitor_team.abbreviation}}</b></span>
+            <app-game-score [game]="game" [markupTeam]="team"></app-game-score>
         </p>
 
         <button id="backBtn" [routerLink]="['/']"> &lt; &lt; Back to all team stats</button>
