@@ -2,8 +2,18 @@
     <div class="team-card">
         <h2>{{team.full_name}} [{{team.abbreviation}}]</h2>
         <h3>{{team.conference}}</h3>
-        <hr/>
+        <img src="https://interstate21.com/nba-logos/{{team.abbreviation}}.png" alt="{{team.abbreviation}} Logo" class="team-logo">
+        <hr />
+        <p>Result of past 12 days:</p>
+        <ng-container *ngIf="games$ | async as games">
+            <p><ng-container *ngFor="let game of games"><div *ngIf="hasWonGame(game) then wonGame else lostGame"></div></ng-container></p>
+            <p>Avg pts scored: <b>{{games | averageScore:team.id | number: '1.0-0'}}</b></p>
+            <p>Avg pts conceded: <b>{{games | averageScore:team.id:true | number: '1.0-0'}}</b></p>
+        </ng-container>
         
+        <button>See Game Results > ></button>
     </div>
 </div>
 
+<ng-template #wonGame><span ngClass="winner-game">W</span></ng-template>
+<ng-template #lostGame><span ngClass="loser-game">L</span></ng-template>

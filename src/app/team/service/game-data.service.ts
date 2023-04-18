@@ -16,22 +16,25 @@ export class GameDataService {
     let dateRange: Date[] = this.getDatesBetween(fromDate, toDate);
     let params: HttpParams = new HttpParams();
     for(let date of dateRange) {
-      params.append('dates[]', formatDate(date, 'yyyy-MM-dd', 'en'));
+      params = params.append('dates[]', formatDate(date, 'yyyy-MM-dd', 'en'));
     }
     if (resultLimit) {
-      params.append('per_page', resultLimit);
+      params = params.append('per_page', resultLimit);
     }
-    params.append('page', 0);
-    return this.http.get<{'data': Game[]}>('https://free-nba.p.rapidapi.com/games?page=0&dates[]=2023-04-06&dates[]=2023-04-15&per_page=12&team_ids[]=26', {headers: API_HEADERS}).pipe(map(data => data.data));
+    params = params.append('page', 0);
+    params = params.append('team_ids[]', teamId);
+    return this.http.get<{'data': Game[]}>('https://free-nba.p.rapidapi.com/games', {headers: API_HEADERS, params:params}).pipe(map(data => data.data));
   }
 
-  private getDatesBetween(fromDate: Date, toDate:Date): Date[] {
-    let current:Date = new Date(fromDate.getDate());
+  getDatesBetween(fromDate: Date, toDate:Date): Date[] {
+    let current:Date = new Date(fromDate);
     let dates: Date[] = [];
+    
     while (current <= toDate) {
       dates.push(new Date(current));
-      current = new Date(current.getDate() + 1);
+      current.setDate(current.getDate() + 1);
     }
+    
     return dates;
   }
 }

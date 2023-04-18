@@ -4,6 +4,7 @@ import { TeamDashboardComponent } from './team-dashboard/team-dashboard.componen
 import { TeamTrackingComponent } from './team-tracking/team-tracking.component';
 import { TeamSummaryComponent } from './team-summary/team-summary.component';
 import {FormsModule} from '@angular/forms';
+import { AverageScorePipe } from './pipe/average-score.pipe';
 
 
 
@@ -11,7 +12,8 @@ import {FormsModule} from '@angular/forms';
   declarations: [
     TeamDashboardComponent,
     TeamTrackingComponent,
-    TeamSummaryComponent
+    TeamSummaryComponent,
+    AverageScorePipe
   ],
   imports: [
     CommonModule,
