@@ -1,5 +1,6 @@
 <div *ngIf="team">
     <div class="team-card">
+        <button id="remove{{team.abbreviation}}">X</button>
         <h2>{{team.full_name}} [{{team.abbreviation}}]</h2>
         <h3>{{team.conference}}</h3>
         <img src="https://interstate21.com/nba-logos/{{team.abbreviation}}.png" alt="{{team.abbreviation}} Logo" class="team-logo">
@@ -11,7 +12,7 @@
             <p>Avg pts conceded: <b>{{games | averageScore:team.id:true | number: '1.0-0'}}</b></p>
         </ng-container>
         
-        <button>See Game Results > ></button>
+        <button id="results{{team.abbreviation}}">See Game Results > ></button>
     </div>
 </div>
 
