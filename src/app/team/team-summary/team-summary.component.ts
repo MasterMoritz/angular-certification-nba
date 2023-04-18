@@ -4,6 +4,7 @@ import { GameDataService } from '../service/game-data.service';
 import { formatDate } from '@angular/common';
 import { Observable, of } from 'rxjs';
 import { Game } from '../dto/game';
+import { TeamTrackingService } from '../service/team-tracking.service';
 
 @Component({
   selector: 'app-team-summary',
@@ -14,7 +15,7 @@ export class TeamSummaryComponent implements OnInit {
   @Input() team?: Team;
   games$: Observable<Game[]> = of([]);
 
-  constructor(private gameDataService: GameDataService) { }
+  constructor(private gameDataService: GameDataService, private teamTrackingService: TeamTrackingService) { }
   ngOnInit(): void {
     let toDate: Date = new Date();
     toDate.setDate(toDate.getDate() - 1)
@@ -25,8 +26,11 @@ export class TeamSummaryComponent implements OnInit {
 
 
   hasWonGame(game: Game):boolean {
-    console.log(3)
     const isHomeTeam: boolean = game.home_team.id === this.team?.id;
     return game.home_team_score > game.visitor_team_score === isHomeTeam;
+  }
+
+  handleCloseButtonClick(team: Team) {
+    this.teamTrackingService.removeTeam(team);
   }
 }

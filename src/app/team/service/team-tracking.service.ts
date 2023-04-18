@@ -10,7 +10,17 @@ export class TeamTrackingService {
   constructor() { }
 
   trackTeam(team: Team): Team[]{
-    this.trackedTeams.push(team);
+    if (team && -1 === this.trackedTeams.findIndex(t => t.id === team.id)) {
+      this.trackedTeams.push(team);
+    }
+    return this.getTrackedTeams();
+  }
+
+  removeTeam(team: Team): Team[] {
+    let idx = this.trackedTeams.findIndex(t => t.id === team.id);
+    if (idx >= 0) {
+      this.trackedTeams.splice(idx, 1);
+    }
     return this.getTrackedTeams();
   }
   
