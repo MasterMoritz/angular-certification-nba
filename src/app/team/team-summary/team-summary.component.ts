@@ -19,7 +19,7 @@ export class TeamSummaryComponent implements OnInit {
   ngOnInit(): void {
     let toDate: Date = this.dateService.addDays(new Date(), -1);
     let fromDate: Date = this.dateService.addDays(toDate, -11);
-    this.games$ = this.gameDataService.getGamesForTeam(this.team?.id ?? -1, fromDate, toDate, 12);
+    this.games$ = this.gameDataService.getGamesForTeam(this.team?.id ?? -1, fromDate, toDate);
   }
 
 

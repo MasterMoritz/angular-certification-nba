@@ -25,6 +25,6 @@ export class TeamResultsComponent implements OnInit {
 
     let toDate: Date = this.dateService.addDays(new Date(), -1);
     let fromDate: Date = this.dateService.addDays(toDate, -11);
-    this.games$ = this.gameDataService.getGamesForTeam(teamCode, fromDate, toDate, 12);
+    this.games$ = this.gameDataService.getGamesForTeam(teamCode, fromDate, toDate);
   }
 }
