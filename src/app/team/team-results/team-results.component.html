@@ -4,7 +4,7 @@
         <h3>{{team.conference}}</h3>
 
         <div class="shadow-inner p-1">
-            <p class="font-semibold mb-4">Scores of past 12 days</p>
+            <p class="font-semibold mb-4 text-center">Scores of past 12 days</p>
             <div *ngFor="let game of games$ | async">
                 <app-game-score [game]="game" [markupTeam]="team"></app-game-score>
             </div>
