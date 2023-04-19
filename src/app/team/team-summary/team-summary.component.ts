@@ -31,7 +31,4 @@ export class TeamSummaryComponent implements OnInit {
   handleCloseButtonClick(team: Team) {
     this.teamTrackingService.removeTeam(team);
   }
-  handleResultButtonClick(team: Team) {
-
-  }
 }
