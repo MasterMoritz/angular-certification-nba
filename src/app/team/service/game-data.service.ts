@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EMPTY, Observable, delay, expand, from, map, mergeMap, of, reduce, repeat, takeUntil, takeWhile, tap } from 'rxjs';
+import { EMPTY, Observable, delay, expand, from, map, mergeMap, of, reduce, repeat, scan, takeUntil, takeWhile, tap } from 'rxjs';
 import { Game } from '../dto/game';
 import { formatDate } from '@angular/common';
 import { DateService } from 'src/app/shared/service/date.service';
@@ -26,7 +26,7 @@ export class GameDataService {
     
     return this._getGamesForTeam(params).pipe(
       expand(res => res.meta.next_page === null ? EMPTY : this._getGamesForTeam(params.set('page', res.meta.next_page))),
-      reduce((acc, val) => {
+      scan((acc, val) => {
         acc = [...acc, ...val.data]
         return acc
       }, <Game[]>[]),
