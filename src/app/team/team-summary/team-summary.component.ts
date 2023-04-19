@@ -4,6 +4,7 @@ import { GameDataService } from '../service/game-data.service';
 import { Observable, of } from 'rxjs';
 import { Game } from '../dto/game';
 import { TeamTrackingService } from '../service/team-tracking.service';
+import { DateService } from 'src/app/shared/service/date.service';
 
 @Component({
   selector: 'app-team-summary',
@@ -14,12 +15,10 @@ export class TeamSummaryComponent implements OnInit {
   @Input() team?: Team;
   games$: Observable<Game[]> = of([]);
 
-  constructor(private gameDataService: GameDataService, private teamTrackingService: TeamTrackingService) { }
+  constructor(private gameDataService: GameDataService, private teamTrackingService: TeamTrackingService, private dateService: DateService) { }
   ngOnInit(): void {
-    let toDate: Date = new Date();
-    toDate.setDate(toDate.getDate() - 1)
-    let fromDate: Date = new Date();
-    fromDate.setDate(toDate.getDate() - 11);
+    let toDate: Date = this.dateService.addDays(new Date(), -1);
+    let fromDate: Date = this.dateService.addDays(toDate, -11);
     this.games$ = this.gameDataService.getGamesForTeam(this.team?.id ?? -1, fromDate, toDate, 12);
   }
 

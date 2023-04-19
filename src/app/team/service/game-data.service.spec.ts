@@ -18,10 +18,4 @@ describe('GameDataService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
-  it('should calculate the correct date range', () => {
-    let dates: Date[] = service.getDatesBetween(new Date(2022, 10, 29), new Date(2022, 11, 2));
-    expect(dates).toHaveSize(4);
-    expect(dates[2]).toEqual(new Date(2022, 11, 1));
-  });
 });
