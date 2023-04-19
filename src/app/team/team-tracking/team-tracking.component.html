@@ -1,4 +1,7 @@
-<select id="teamSelect" [(ngModel)]="selectedTeam">
-    <option *ngFor="let team of teams$ | async" [ngValue]="team">{{team.full_name}}</option>
-</select>
-<button id="trackBtn" (click)="handleTrackButtonClick(selectedTeam)">Track team</button>
+<div class="flex gap-4 flex-wrap">
+    <select id="teamSelect" [(ngModel)]="selectedTeam">
+        <option *ngFor="let team of teams$ | async" [ngValue]="team">{{team.full_name}}</option>
+    </select>
+    <button class="p-1 rounded hover:bg-slate-200 focus:bg-slate-400 shadow" id="trackBtn" (click)="handleTrackButtonClick(selectedTeam)">Track team</button>
+</div>
+
