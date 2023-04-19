@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TeamDataService } from '../service/team-data.service';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Team } from '../dto/team';
+import { TeamDataService } from '../service/team-data.service';
 import { TeamTrackingService } from '../service/team-tracking.service';
 
 @Component({

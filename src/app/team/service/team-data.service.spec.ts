@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TeamDataService } from './team-data.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('TeamDataService', () => {
   let service: TeamDataService;

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { TeamDataService } from '../service/team-data.service';
-import { Team } from '../dto/team';
-import { EMPTY, Observable, from, of } from 'rxjs';
-import { GameDataService } from '../service/game-data.service';
-import { Game } from '../dto/game';
+import { EMPTY, Observable, of } from 'rxjs';
 import { DateService } from 'src/app/shared/service/date.service';
+import { Game } from '../dto/game';
+import { Team } from '../dto/team';
+import { GameDataService } from '../service/game-data.service';
+import { TeamDataService } from '../service/team-data.service';
 
 @Component({
   selector: 'app-team-results',
