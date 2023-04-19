@@ -1,9 +1,17 @@
-<div *ngIf="game">
-    <span
-    [ngClass]="shouldAddMarkupClassForTeam(game.home_team) ? (hasTeamWon(game.home_team, game) ? 'winner-team' : 'loser-team') : ''"><b>{{game.home_team.abbreviation}}</b></span>
-    &nbsp;
-    <span>{{game.home_team_score}} - {{game.visitor_team_score}}</span>
-    &nbsp;
-    <span
-    [ngClass]="shouldAddMarkupClassForTeam(game.visitor_team) ? (hasTeamWon(game.visitor_team, game) ? 'winner-team' : 'loser-team'): ''"><b>{{game.visitor_team.abbreviation}}</b></span>
+<div *ngIf="game" class="grid grid-cols-3 grid-rows-1 justify-center place-items-center">
+
+    <div
+        [ngClass]="shouldAddMarkupClassForTeam(game.home_team) ? (hasTeamWon(game.home_team, game) ? 'winner-team' : 'loser-team') : ''">
+        <b>{{game.home_team.abbreviation}}</b>
+    </div>
+
+
+    <div>
+        {{game.home_team_score}} - {{game.visitor_team_score}}
+    </div>
+
+    <div
+        [ngClass]="shouldAddMarkupClassForTeam(game.visitor_team) ? (hasTeamWon(game.visitor_team, game) ? 'winner-team' : 'loser-team'): ''">
+        <b>{{game.visitor_team.abbreviation}}</b>
+    </div>
 </div>

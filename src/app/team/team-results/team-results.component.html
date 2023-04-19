@@ -1,13 +1,14 @@
 <ng-container *ngIf="team$ | async as team">
-    <div class="team-card">
+    <div class="team-card flex flex-col gap-2 items-center p-2">
         <h2>{{team.full_name}} [{{team.abbreviation}}]</h2>
         <h3>{{team.conference}}</h3>
-        <hr />
-        <p>Scores of past 12 days:</p>
-        <p *ngFor="let game of games$ | async">
-            <app-game-score [game]="game" [markupTeam]="team"></app-game-score>
-        </p>
 
-        <button id="backBtn" [routerLink]="['/']"> &lt; &lt; Back to all team stats</button>
+        <div class="shadow-inner p-1">
+            <p class="font-semibold mb-4">Scores of past 12 days</p>
+            <div *ngFor="let game of games$ | async">
+                <app-game-score [game]="game" [markupTeam]="team"></app-game-score>
+            </div>
+        </div>
+        <button class="p-1 rounded hover:bg-slate-200 focus:bg-slate-400 shadow" id="backBtn" [routerLink]="['/']"> &lt; &lt; Back to all team stats</button>
     </div>
 </ng-container>
