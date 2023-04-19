@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { EMPTY, Observable, delay, expand, from, map, mergeMap, of, reduce, repeat, scan, takeUntil, takeWhile, tap } from 'rxjs';
 import { Game } from '../dto/game';
 import { formatDate } from '@angular/common';
-import { DateService } from 'src/app/shared/service/date.service';
 import { GamesResponse } from '../api/response/games-response';
+import { DateService } from './date.service';
 const API_HEADERS = new HttpHeaders({ 'X-RapidAPI-Key': '2QMXSehDLSmshDmRQcKUIAiQjIZAp1UvKUrjsnewgqSP6F5oBX', 'X-RapidAPI-Host': 'free-nba.p.rapidapi.com' });
 
 @Injectable({

@@ -4,7 +4,7 @@ import { GameDataService } from '../service/game-data.service';
 import { Observable, of } from 'rxjs';
 import { Game } from '../dto/game';
 import { TeamTrackingService } from '../service/team-tracking.service';
-import { DateService } from 'src/app/shared/service/date.service';
+import { DateService } from '../service/date.service';
 
 @Component({
   selector: 'app-team-summary',
