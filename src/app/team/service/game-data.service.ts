@@ -23,17 +23,17 @@ export class GameDataService {
     params = params.append('per_page', resultLimit ? resultLimit : 25);
     params = params.append('team_ids[]', teamId);
     params = params.set('page', 0);
-    
+
     return this._getGamesForTeam(params).pipe(
       expand(res => res.meta.next_page === null ? EMPTY : this._getGamesForTeam(params.set('page', res.meta.next_page))),
       scan((acc, val) => {
         acc = [...acc, ...val.data]
         return acc
       }, <Game[]>[]),
-      );
+    );
   }
 
   private _getGamesForTeam(params: HttpParams): Observable<GamesResponse> {
     return this.http.get<GamesResponse>('https://free-nba.p.rapidapi.com/games', { headers: API_HEADERS, params: params })
-}
+  }
 }

@@ -11,10 +11,10 @@ describe('TeamSummaryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TeamSummaryComponent ],
-      providers: [ { provide: GameDataService, useValue: gameDataServiceStub } ],
+      declarations: [TeamSummaryComponent],
+      providers: [{ provide: GameDataService, useValue: gameDataServiceStub }],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TeamSummaryComponent);
     component = fixture.componentInstance;
@@ -29,7 +29,7 @@ describe('TeamSummaryComponent', () => {
 //stubs
 let gameDataServiceStub: Partial<GameDataService>;
 gameDataServiceStub = {
-  getGamesForTeam(teamId:number, fromDate: Date, toDate:Date, resultLimit?:number):Observable<Game[]> {
+  getGamesForTeam(teamId: number, fromDate: Date, toDate: Date, resultLimit?: number): Observable<Game[]> {
     return of([])
   },
 }

@@ -13,7 +13,7 @@ export class TeamTrackingComponent implements OnInit {
   teams$!: Observable<Team[]>;
   selectedTeam!: Team;
 
-  constructor(private teamDataService: TeamDataService, private teamTrackingService: TeamTrackingService) {}
+  constructor(private teamDataService: TeamDataService, private teamTrackingService: TeamTrackingService) { }
 
 
   ngOnInit(): void {

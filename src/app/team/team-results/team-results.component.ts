@@ -16,7 +16,8 @@ export class TeamResultsComponent implements OnInit {
   team$: Observable<Team> = EMPTY;
   games$: Observable<Game[]> = of([]);
 
-  constructor(private route: ActivatedRoute, private teamDataService: TeamDataService, private gameDataService: GameDataService, private dateService: DateService) { }
+  constructor(private route: ActivatedRoute, private teamDataService: TeamDataService,
+    private gameDataService: GameDataService, private dateService: DateService) { }
 
   ngOnInit(): void {
     const routeParams: ParamMap = this.route.snapshot.paramMap;

@@ -8,9 +8,11 @@ describe('GameDataService', () => {
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({imports: [
-      HttpClientTestingModule,
-    ]});
+    TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule,
+      ]
+    });
     service = TestBed.inject(GameDataService);
     httpMock = TestBed.inject(HttpTestingController); // <-- here
   });

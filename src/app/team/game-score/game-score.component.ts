@@ -9,7 +9,7 @@ import { Team } from '../dto/team';
   styleUrls: ['./game-score.component.css']
 })
 export class GameScoreComponent {
-  @Input() game?:Game;
+  @Input() game?: Game;
   @Input() markupTeam?: Team;
 
   shouldAddMarkupClassForTeam(team: Team) {
