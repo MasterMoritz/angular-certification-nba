@@ -20,7 +20,7 @@ export class TeamTrackingComponent implements OnInit {
     this.teams$ = this.teamDataService.getTeams();
   }
 
-  handleTrackButtonClick(team: Team) {
+  handleTrackButtonClick(team: Team): void {
     if (team) {
       this.teamTrackingService.trackTeam(team);
     }
