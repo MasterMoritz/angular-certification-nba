@@ -9,7 +9,7 @@ import { Team } from '../dto/team';
 })
 export class TeamDashboardComponent implements OnInit {
   teams: Team[] = [];
-  constructor(private teamTrackingService: TeamTrackingService) {}
+  constructor(private teamTrackingService: TeamTrackingService) { }
   ngOnInit(): void {
     this.teams = this.teamTrackingService.getTrackedTeams();
   }

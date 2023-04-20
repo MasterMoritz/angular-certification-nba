@@ -9,7 +9,7 @@ export class TeamTrackingService {
   private trackedTeams: Team[] = [];
   constructor() { }
 
-  trackTeam(team: Team): Team[]{
+  trackTeam(team: Team): Team[] {
     if (team && -1 === this.trackedTeams.findIndex(t => t.id === team.id)) {
       this.trackedTeams.push(team);
     }
@@ -23,7 +23,7 @@ export class TeamTrackingService {
     }
     return this.getTrackedTeams();
   }
-  
+
   getTrackedTeams(): Team[] {
     return this.trackedTeams;
   }

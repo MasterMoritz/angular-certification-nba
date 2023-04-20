@@ -33,7 +33,7 @@ describe('DateService', () => {
     newDate = service.addDays(originalDate, 365);
     expect(newDate).toEqual(new Date(2020, 9, 28));
   });
-  
+
   it('should not mutate original date when adding days', () => {
     let originalDate: Date = new Date(2022, 10, 29);
     let newDate: Date = service.addDays(originalDate, 3);
