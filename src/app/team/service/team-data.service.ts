@@ -2,8 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Team } from '../dto/team';
 import { Observable, map } from 'rxjs';
-
-const API_HEADERS = new HttpHeaders({ 'X-RapidAPI-Key': '2QMXSehDLSmshDmRQcKUIAiQjIZAp1UvKUrjsnewgqSP6F5oBX', 'X-RapidAPI-Host': 'free-nba.p.rapidapi.com' });
+import { API_HEADERS } from '../api/api-config';
 
 @Injectable({
   providedIn: 'root'

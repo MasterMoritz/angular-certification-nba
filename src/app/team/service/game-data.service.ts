@@ -5,7 +5,7 @@ import { Game } from '../dto/game';
 import { formatDate } from '@angular/common';
 import { GamesResponse } from '../api/response/games-response';
 import { DateService } from './date.service';
-const API_HEADERS = new HttpHeaders({ 'X-RapidAPI-Key': '2QMXSehDLSmshDmRQcKUIAiQjIZAp1UvKUrjsnewgqSP6F5oBX', 'X-RapidAPI-Host': 'free-nba.p.rapidapi.com' });
+import { API_HEADERS } from '../api/api-config';
 
 @Injectable({
   providedIn: 'root'
