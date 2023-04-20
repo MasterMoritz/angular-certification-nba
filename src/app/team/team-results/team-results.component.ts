@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { EMPTY, Observable, map, mergeMap, of } from 'rxjs';
+import { EMPTY, Observable, Subscription, map, mergeMap, of } from 'rxjs';
 import { Game } from '../dto/game';
 import { Team } from '../dto/team';
 import { GameDataService } from '../service/game-data.service';
@@ -12,10 +12,12 @@ import { DateService } from '../service/date.service';
   templateUrl: './team-results.component.html',
   styleUrls: ['./team-results.component.css']
 })
-export class TeamResultsComponent implements OnInit {
+export class TeamResultsComponent implements OnInit, OnDestroy {
   team$: Observable<Team> = EMPTY;
   games$: Observable<Game[]> = of([]);
   teamId?: number;
+
+  private _subscriptions: Subscription[] = [];
 
   constructor(private route: ActivatedRoute, private teamDataService: TeamDataService,
     private gameDataService: GameDataService, private dateService: DateService) { }
@@ -29,5 +31,11 @@ export class TeamResultsComponent implements OnInit {
     let toDate: Date = this.dateService.addDays(new Date(), -1);
     let fromDate: Date = this.dateService.addDays(toDate, -11);
      ;
+  }
+
+  ngOnDestroy(): void {
+    for (let sub of this._subscriptions) {
+      sub.unsubscribe();
+    }
   }
 }
