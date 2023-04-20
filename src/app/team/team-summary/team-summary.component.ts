@@ -15,7 +15,8 @@ export class TeamSummaryComponent implements OnInit {
   @Input() team?: Team;
   games$: Observable<Game[]> = of([]);
 
-  constructor(private gameDataService: GameDataService, private teamTrackingService: TeamTrackingService, private dateService: DateService) { }
+  constructor(private gameDataService: GameDataService, private teamTrackingService: TeamTrackingService,
+    private dateService: DateService) { }
   ngOnInit(): void {
     let toDate: Date = this.dateService.addDays(new Date(), -1);
     let fromDate: Date = this.dateService.addDays(toDate, -11);
@@ -23,7 +24,7 @@ export class TeamSummaryComponent implements OnInit {
   }
 
 
-  hasWonGame(game: Game):boolean {
+  hasWonGame(game: Game): boolean {
     const isHomeTeam: boolean = game.home_team.id === this.team?.id;
     return game.home_team_score > game.visitor_team_score === isHomeTeam;
   }

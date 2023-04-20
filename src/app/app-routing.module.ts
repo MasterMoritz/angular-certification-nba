@@ -4,8 +4,8 @@ import { TeamDashboardComponent } from './team/team-dashboard/team-dashboard.com
 import { TeamResultsComponent } from './team/team-results/team-results.component';
 
 const routes: Routes = [
-  {path: 'results/:teamCode', component: TeamResultsComponent},
-  {path: '', component: TeamDashboardComponent},
+  { path: 'results/:teamCode', component: TeamResultsComponent },
+  { path: '', component: TeamDashboardComponent },
 ];
 
 @NgModule({

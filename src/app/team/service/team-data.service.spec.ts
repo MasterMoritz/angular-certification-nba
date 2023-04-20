@@ -7,9 +7,11 @@ describe('TeamDataService', () => {
   let service: TeamDataService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({imports: [
-      HttpClientTestingModule,
-    ]});
+    TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule,
+      ]
+    });
     service = TestBed.inject(TeamDataService);
   });
 

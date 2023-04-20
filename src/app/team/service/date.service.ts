@@ -7,15 +7,15 @@ export class DateService {
 
   constructor() { }
 
-  getDatesBetween(fromDate: Date, toDate:Date): Date[] {
-    let current:Date = new Date(fromDate);
+  getDatesBetween(fromDate: Date, toDate: Date): Date[] {
+    let current: Date = new Date(fromDate);
     let dates: Date[] = [];
-    
+
     while (current <= toDate) {
       dates.push(new Date(current));
       current.setDate(current.getDate() + 1);
     }
-    
+
     return dates;
   }
 

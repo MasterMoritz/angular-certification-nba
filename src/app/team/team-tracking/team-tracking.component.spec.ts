@@ -12,11 +12,11 @@ describe('TeamTrackingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ FormsModule ],
-      declarations: [ TeamTrackingComponent ],
-      providers: [ { provide: TeamDataService, useValue: teamDataServiceStub } ],
+      imports: [FormsModule],
+      declarations: [TeamTrackingComponent],
+      providers: [{ provide: TeamDataService, useValue: teamDataServiceStub }],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TeamTrackingComponent);
     component = fixture.componentInstance;
@@ -31,7 +31,7 @@ describe('TeamTrackingComponent', () => {
 //stubs
 let teamDataServiceStub: Partial<TeamDataService>;
 teamDataServiceStub = {
-  getTeams():Observable<Team[]> {
+  getTeams(): Observable<Team[]> {
     return of([])
   },
 }
