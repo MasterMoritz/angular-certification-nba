@@ -46,6 +46,9 @@ teamDataServiceStub = {
   getTeam(id: number): Observable<Team> {
     return EMPTY
   },
+  getTeamByCode(teamCode: string): Observable<Team> {
+    return EMPTY
+  }
 }
 let gameDataServiceStub: Partial<GameDataService>;
 gameDataServiceStub = {
